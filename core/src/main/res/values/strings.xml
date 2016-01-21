@@ -3,5 +3,5 @@
     <item name="app_name" type="string" />
     <!-- TranslateThisAppActivity -->
     <string name="core_title_activity_translate_this_app">Translate this app</string>
-    <string name="core_text_info_translate_app">If you wish to contribute and improve the translation of this app in your language, please send email to apps@freemindapps.com.br.\n\nAs a reward we'll list your name on a reserved section of the screen \"About the app\".</string>
+    <string name="core_text_info_translate_app">If you wish to contribute and improve the translation of this app in your language, please send email to apps@freemindapps.com.br.\n\nAs a reward we\'ll list your name on a reserved section of the screen \"About the app\".</string>
 </resources>
