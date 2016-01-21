@@ -1,8 +1,11 @@
 package br.com.tattobr.android.core;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
@@ -14,7 +17,7 @@ import br.com.tattobr.android.dialogs.EditTextAlertDialogFragment;
 
 public abstract class BaseActivity extends br.com.tattobr.android.adsanalytics.BaseActivity implements
         AlertDialogFragment.AlertDialogFragmentListener,
-        EditTextAlertDialogFragment.EditTextAlertDialogFragmentListener{
+        EditTextAlertDialogFragment.EditTextAlertDialogFragmentListener {
     protected final String FRAGMENT_TAG_WORKER = "br.com.tattobr.android.core.FRAGMENT_TAG_WORKER";
     protected final String FRAGMENT_TAG_DIALOG = "br.com.tattobr.android.core.FRAGMENT_TAG_DIALOG";
 
@@ -34,6 +37,12 @@ public abstract class BaseActivity extends br.com.tattobr.android.adsanalytics.B
 
     protected boolean shouldShowRequestPermissionRationaleWriteExternalStoragePermission() {
         return ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+    }
+
+    protected void openPermissionSettings() {
+        Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+        intent.setData(Uri.fromParts("package", getPackageName(), null));
+        startActivity(intent);
     }
 
     @Override
