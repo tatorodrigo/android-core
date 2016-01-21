@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- TranslateThisAppActivity -->
+    <string name="core_title_activity_translate_this_app">Traduzir este app</string>
+    <string name="core_text_info_translate_app">Se você deseja contribuir e melhorar a tradução deste app no seu idioma, por favor, envie um email para apps@freemindapps.com.br.\n\nComo recompensa colocaremos seu nome em uma seção reservada da tela \"Sobre o aplicativo\".</string>
+</resources>

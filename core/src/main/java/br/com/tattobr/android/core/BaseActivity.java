@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBar;
+import android.support.v7.widget.Toolbar;
 
 import br.com.tattobr.android.dialogs.AlertDialogFragment;
 import br.com.tattobr.android.dialogs.EditTextAlertDialogFragment;
@@ -46,6 +48,19 @@ public abstract class BaseActivity extends br.com.tattobr.android.adsanalytics.B
         super.onResume();
 
         mIsResumed = true;
+    }
+
+    protected void setupToolbar(boolean navigationDrawer, boolean navigationUp) {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        if (toolbar != null) {
+            setSupportActionBar(toolbar);
+        }
+
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(navigationUp);
+            actionBar.setHomeButtonEnabled(navigationDrawer);
+        }
     }
 
     protected void removeDialogFragment() {
