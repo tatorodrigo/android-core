@@ -73,14 +73,22 @@ public abstract class BaseActivity extends br.com.tattobr.android.adsanalytics.B
     }
 
     protected void removeDialogFragment() {
-        Fragment task = getSupportFragmentManager().findFragmentByTag(FRAGMENT_TAG_DIALOG);
+        removeDialogFragment(FRAGMENT_TAG_DIALOG);
+    }
+
+    protected void removeWorkerFragment() {
+        removeWorkerFragment(FRAGMENT_TAG_WORKER);
+    }
+
+    protected void removeDialogFragment(String tag) {
+        Fragment task = getSupportFragmentManager().findFragmentByTag(tag);
         if (task != null) {
             getSupportFragmentManager().beginTransaction().remove(task).commitAllowingStateLoss();
         }
     }
 
-    protected void removeWorkerFragment() {
-        Fragment task = getSupportFragmentManager().findFragmentByTag(FRAGMENT_TAG_WORKER);
+    protected void removeWorkerFragment(String tag) {
+        Fragment task = getSupportFragmentManager().findFragmentByTag(tag);
         if (task != null) {
             getSupportFragmentManager().beginTransaction().remove(task).commitAllowingStateLoss();
         }
