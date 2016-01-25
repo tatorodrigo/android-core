@@ -17,6 +17,11 @@ public class TranslateThisAppActivity extends BaseActivity implements View.OnCli
     }
 
     @Override
+    protected long getInterstitialAdMilisInterval() {
+        return 0l;
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_translate_this_app);
