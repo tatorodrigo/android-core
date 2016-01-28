@@ -29,7 +29,7 @@ public class TranslateThisAppActivity extends BaseActivity implements View.OnCli
         initialize();
     }
 
-    private void initialize(){
+    private void initialize() {
         setupToolbar(false, true);
         setupAds();
 
@@ -50,23 +50,27 @@ public class TranslateThisAppActivity extends BaseActivity implements View.OnCli
 
     @Override
     public void onClick(View v) {
-        if(v == mButtonTranslateApp){
+        if (v == mButtonTranslateApp) {
             sendEmail();
         }
     }
 
-    private void sendEmail(){
+    private void sendEmail() {
+        String email = getString(R.string.email_translate_this_app);
+        if (email.isEmpty()) {
+            throw new Error("Please, define the string resource email_translate_this_app.");
+        }
         String subjectEmail = String.format("%s - %s", getString(R.string.core_title_activity_translate_this_app), getString(R.string.app_name));
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setType("text/plain");
         intent.putExtra(Intent.EXTRA_SUBJECT, subjectEmail);
-        intent.setData(Uri.parse("mailto:apps@freemindapps.com.br"));
+        intent.setData(Uri.parse("mailto:" + email));
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
-        try{
+        try {
             startActivity(intent);
-        }catch (ActivityNotFoundException anfe){
-            anfe.printStackTrace();
+        } catch (ActivityNotFoundException e) {
+            e.printStackTrace();
         }
     }
 }
