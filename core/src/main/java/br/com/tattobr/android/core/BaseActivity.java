@@ -104,13 +104,19 @@ public abstract class BaseActivity extends br.com.tattobr.android.adsanalytics.B
     }
 
     protected void showAlertDialog(int tag, String title, String message, int checkbox, boolean showNegativeButton) {
-        AlertDialogFragment alertDialog = AlertDialogFragment.newInstance(tag, title, message, checkbox, showNegativeButton, false, false, null);
-        showFragmentDialog(alertDialog);
+        showAlertDialog(tag, title, message, checkbox, false, showNegativeButton, false, false, null);
     }
 
     protected void showAlertDialog(int tag, String title, String message, boolean showNegativeButton, Bundle bundle) {
         AlertDialogFragment alertDialog = AlertDialogFragment.newInstance(
-                tag, title, message, showNegativeButton, false, false, bundle
+                tag, title, message, false, showNegativeButton, false, false, bundle
+        );
+        showFragmentDialog(alertDialog);
+    }
+
+    protected void showAlertDialog(int tag, String title, String message, int checkbox, boolean checkboxChecked, boolean showNegativeButton, boolean cancelable, boolean cancelOnTouchOutside, Bundle params) {
+        AlertDialogFragment alertDialog = AlertDialogFragment.newInstance(
+                tag, title, message, checkbox, checkboxChecked, showNegativeButton, cancelable, cancelOnTouchOutside, params
         );
         showFragmentDialog(alertDialog);
     }
