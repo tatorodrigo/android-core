@@ -13,7 +13,7 @@ ext {
     siteUrl = 'https://github.com/tatorodrigo/android-core'
     gitUrl = 'https://github.com/tatorodrigo/android-core.git'
 
-    libraryVersion = '0.1.4'
+    libraryVersion = '0.1.5'
 
     developerId = 'tatorodrigo'
     developerName = 'Rodrigo Tatto'
@@ -32,7 +32,7 @@ android {
         minSdkVersion 9
         targetSdkVersion 23
         versionCode 1
-        versionName "0.1.4"
+        versionName "0.1.5"
     }
     buildTypes {
         release {
@@ -47,8 +47,8 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:support-v4:23.1.1'
-    compile 'br.com.tattobr.android:ads-analytics:0.1.4'
-    compile 'br.com.tattobr.android:dialogs:0.1.4'
+    compile 'br.com.tattobr.android:ads-analytics:0.1.5'
+    compile 'br.com.tattobr.android:dialogs:0.1.5'
 }
 
 apply from: 'https://raw.githubusercontent.com/tatorodrigo/jcenter/master/install.gradle'

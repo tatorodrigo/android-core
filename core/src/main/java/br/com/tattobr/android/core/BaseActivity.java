@@ -11,6 +11,7 @@ import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
+import android.text.InputType;
 
 import br.com.tattobr.android.dialogs.AlertDialogFragment;
 import br.com.tattobr.android.dialogs.EditTextAlertDialogFragment;
@@ -102,6 +103,11 @@ public abstract class BaseActivity extends br.com.tattobr.android.adsanalytics.B
         showAlertDialog(tag, title, message, showNegativeButton, null);
     }
 
+    protected void showAlertDialog(int tag, String title, String message, int checkbox, boolean showNegativeButton) {
+        AlertDialogFragment alertDialog = AlertDialogFragment.newInstance(tag, title, message, checkbox, showNegativeButton, false, false, null);
+        showFragmentDialog(alertDialog);
+    }
+
     protected void showAlertDialog(int tag, String title, String message, boolean showNegativeButton, Bundle bundle) {
         AlertDialogFragment alertDialog = AlertDialogFragment.newInstance(
                 tag, title, message, showNegativeButton, false, false, bundle
@@ -109,11 +115,31 @@ public abstract class BaseActivity extends br.com.tattobr.android.adsanalytics.B
         showFragmentDialog(alertDialog);
     }
 
+    protected void showAlertDialog(int tag, String title, String message, String positiveLabel, String negativeLabel) {
+        AlertDialogFragment alertDialogFragment = AlertDialogFragment.newInstance(tag, title, message, positiveLabel, negativeLabel, null);
+        showFragmentDialog(alertDialogFragment);
+    }
+
     protected void showEditTextDialog(int tag, int title, int message, String text) {
-        EditTextAlertDialogFragment editTextAlertDialogFragment = EditTextAlertDialogFragment.newInstance(
-                tag, title, message, text
-        );
-        showFragmentDialog(editTextAlertDialogFragment);
+        showEditTextDialog(tag, title, message, text, -1, null);
+    }
+
+    protected void showEditTextDialog(int tag, int title, int message, String text, Bundle params) {
+        showEditTextDialog(tag, title, message, text, -1, params);
+    }
+
+    protected void showEditTextDialogNumberKeyboard(int tag, int title, int message, String text) {
+        showEditTextDialog(tag, title, message, text, InputType.TYPE_CLASS_NUMBER, null);
+    }
+
+    protected void showEditTextDialogNumberKeyboard(int tag, int title, int message, String text, Bundle params) {
+        showEditTextDialog(tag, title, message, text, InputType.TYPE_CLASS_NUMBER, params);
+    }
+
+    protected void showEditTextDialog(int tag, int title, int message, String textDefault, int inputType, Bundle params) {
+        EditTextAlertDialogFragment alertDialog = EditTextAlertDialogFragment.newInstance(
+                tag, title, message, textDefault, inputType, params);
+        showFragmentDialog(alertDialog);
     }
 
     protected void showFragmentDialog(DialogFragment dialog) {
@@ -135,12 +161,12 @@ public abstract class BaseActivity extends br.com.tattobr.android.adsanalytics.B
     }
 
     @Override
-    public void onEditTextDialogPositiveButton(int tag, String text) {
+    public void onEditTextDialogPositiveButton(int tag, String text, Bundle params) {
 
     }
 
     @Override
-    public void onEditTextDialogNegativeButton(int tag) {
+    public void onEditTextDialogNegativeButton(int tag, Bundle params) {
 
     }
 }
