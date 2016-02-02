@@ -46,6 +46,39 @@ public abstract class BaseActivity extends br.com.tattobr.android.adsanalytics.B
         startActivity(intent);
     }
 
+    protected void rateThisApp() {
+        final String appPackageName = getPackageName(); // getPackageName() from Context or Activity object
+        try {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
+        } catch (android.content.ActivityNotFoundException anfe) {
+            try {
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName)));
+            } catch (Throwable t) {
+                t.printStackTrace();
+            }
+        }
+    }
+
+    protected void moreApps(String developerId) {
+        try {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://search?q=pub:" + developerId)));
+        } catch (android.content.ActivityNotFoundException anfe) {
+            try {
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/developer?id=" + developerId)));
+            } catch (Throwable t) {
+                t.printStackTrace();
+            }
+        }
+    }
+
+    protected void moreAppsSite(String url) {
+        try {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+        } catch (Throwable t) {
+            t.printStackTrace();
+        }
+    }
+
     @Override
     protected void onPause() {
         super.onPause();

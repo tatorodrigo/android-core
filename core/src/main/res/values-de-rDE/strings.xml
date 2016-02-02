@@ -3,4 +3,10 @@
     <!-- TranslateThisAppActivity -->
     <string name="core_title_activity_translate_this_app">Übersetzen Sie diese App</string>
     <string name="core_text_info_translate_app">Wenn Sie einen Beitrag leisten und zur Verbesserung der Übersetzung dieser App in Ihrer Sprache wünschen, bitte eMail apps@freemindapps.com.br.\n\nAls Belohnung wird Ihren Namen auf einem reservierten Bereich des Bildschirms \"Über die App\" aufzulisten.</string>
+
+    <!-- Navigation Drawer -->
+    <string name="core_navigation_drawer_more_apps">Weitere Anwendungen</string>
+    <string name="core_navigation_drawer_rate_this_app">Bewerten Sie diese Anwendung</string>
+    <string name="core_navigation_drawer_about">über</string>
+    <string name="core_navigation_drawer_settings">Einstellungen</string>
 </resources>
