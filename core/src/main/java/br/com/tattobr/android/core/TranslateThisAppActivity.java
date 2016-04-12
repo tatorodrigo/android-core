@@ -55,10 +55,15 @@ public class TranslateThisAppActivity extends BaseActivity implements View.OnCli
         }
     }
 
+    @Override
+    protected String getTranslateThisAppEmail() {
+        return getString(R.string.email_translate_this_app);
+    }
+
     private void sendEmail() {
-        String email = getString(R.string.email_translate_this_app);
+        String email = getTranslateThisAppEmail();
         if (email.isEmpty()) {
-            throw new Error("Please, define the string resource email_translate_this_app.");
+            throw new Error("Please, override method getTranslateThisAppEmail()");
         }
         String subjectEmail = String.format("%s - %s", getString(R.string.core_title_activity_translate_this_app), getString(R.string.app_name));
         Intent intent = new Intent(Intent.ACTION_SENDTO);

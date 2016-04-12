@@ -106,6 +106,10 @@ public abstract class BaseActivity extends br.com.tattobr.android.adsanalytics.B
         }
     }
 
+    protected String getTranslateThisAppEmail() {
+        return null;
+    }
+
     protected void removeDialogFragment() {
         removeDialogFragment(FRAGMENT_TAG_DIALOG);
     }
