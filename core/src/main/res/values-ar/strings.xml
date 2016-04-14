@@ -2,7 +2,7 @@
 <resources>
     <!-- TranslateThisAppActivity -->
     <string name="core_title_activity_translate_this_app">ترجمة هذا التطبيق</string>
-    <string name="core_text_info_translate_app">إذا كنت ترغب في المساهمة وتحسين ترجمة هذا التطبيق في اللغة الخاصة بك، الرجاء ارسال بريد الكتروني apps@freemindapps.com.br.\n\nكمكافأة سوف قائمة اسمك على القسم المحجوز من الشاشة "حول التطبيق".</string>
+    <string name="core_text_info_translate_app">إذا كنت ترغب في المساهمة وتحسين ترجمة هذا التطبيق في اللغة الخاصة بك، الرجاء ارسال بريد الكتروني %s.\n\nكمكافأة سوف قائمة اسمك على القسم المحجوز من الشاشة "حول التطبيق".</string>
 	
 	<!-- Navigation Drawer -->
     <string name="core_navigation_drawer_settings">إعدادات</string>

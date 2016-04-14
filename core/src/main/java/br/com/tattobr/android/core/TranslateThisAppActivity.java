@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class TranslateThisAppActivity extends BaseActivity implements View.OnClickListener {
     private Button mButtonTranslateApp;
@@ -33,8 +34,22 @@ public class TranslateThisAppActivity extends BaseActivity implements View.OnCli
         setupToolbar(false, true);
         setupAds();
 
+        TextView textViewTranslateApp = (TextView) findViewById(R.id.text_view_info_translate_app);
+        if (textViewTranslateApp != null) {
+            String email = super.getTranslateThisAppEmail();
+            if (email == null || email.isEmpty()) {
+                email = getTranslateThisAppEmail();
+            }
+
+            if (!email.isEmpty()) {
+                textViewTranslateApp.setText(getString(R.string.core_text_info_translate_app, email));
+            }
+        }
+
         mButtonTranslateApp = (Button) findViewById(R.id.button_translate_app);
-        mButtonTranslateApp.setOnClickListener(this);
+        if (mButtonTranslateApp != null) {
+            mButtonTranslateApp.setOnClickListener(this);
+        }
     }
 
     @Override
