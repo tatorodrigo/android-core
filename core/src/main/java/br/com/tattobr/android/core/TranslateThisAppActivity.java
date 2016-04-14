@@ -61,7 +61,11 @@ public class TranslateThisAppActivity extends BaseActivity implements View.OnCli
     }
 
     private void sendEmail() {
-        String email = getTranslateThisAppEmail();
+        String email = super.getTranslateThisAppEmail();
+        if (email == null || email.isEmpty()) {
+            email = getTranslateThisAppEmail();
+        }
+
         if (email.isEmpty()) {
             throw new Error("Please, override method getTranslateThisAppEmail()");
         }
