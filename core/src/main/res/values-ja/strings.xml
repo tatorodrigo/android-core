@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="app_name" type="string" />
+    <!-- TranslateThisAppActivity -->
+    <string name="core_title_activity_translate_this_app">このアプリを翻訳</string>
+    <string name="core_text_info_translate_app">あなたが貢献し、あなたの言語で、このアプリの翻訳を改善したい場合は、%sにメールを送ってください。\n\nは報酬として、私たちは、「アプリについて」画面の予約セクションに自分の名前をリストアップします。</string>
+
+    <!-- Navigation Drawer -->
+    <string name="core_navigation_drawer_settings">設定</string>
+    <string name="core_navigation_drawer_more_apps">より多くのアプリケーション</string>
+    <string name="core_navigation_drawer_about">約</string>
+    <string name="core_navigation_drawer_rate_this_app">このアプリを評価</string>
+</resources>
