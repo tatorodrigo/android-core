@@ -13,7 +13,7 @@ ext {
     siteUrl = 'https://github.com/tatorodrigo/android-core'
     gitUrl = 'https://github.com/tatorodrigo/android-core.git'
 
-    libraryVersion = '0.1.21'
+    libraryVersion = '0.2.2'
 
     developerId = 'tatorodrigo'
     developerName = 'Rodrigo Tatto'
@@ -25,13 +25,13 @@ ext {
 }
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 30
 
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 27
+        minSdkVersion 16
+        targetSdkVersion 30
         versionCode 1
-        versionName "0.1.21"
+        versionName "0.2.2"
     }
     buildTypes {
         release {
@@ -43,11 +43,11 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:27.1.1'
-    implementation 'com.android.support:support-v4:27.1.1'
-    implementation 'br.com.tattobr.android:ads-analytics:0.1.21'
-    implementation 'br.com.tattobr.android:dialogs:0.1.21'
-    testImplementation 'junit:junit:4.12'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'br.com.tattobr.android:ads-analytics:0.2.2'
+    implementation 'br.com.tattobr.android:dialogs:0.2.2'
+    testImplementation 'junit:junit:4.13.1'
 }
 
 apply from: 'https://raw.githubusercontent.com/tatorodrigo/jcenter/master/install.gradle'

@@ -6,7 +6,7 @@
 
     <include layout="@layout/include_toolbar" />
 
-    <android.support.v4.widget.NestedScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
@@ -41,5 +41,5 @@
                 android:text="@string/core_title_activity_translate_this_app"
                 android:textColor="#FFFFFF" />
         </LinearLayout>
-    </android.support.v4.widget.NestedScrollView>
+    </androidx.core.widget.NestedScrollView>
 </LinearLayout>
