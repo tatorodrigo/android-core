@@ -18,6 +18,11 @@ public class TranslateThisAppActivity extends BaseActivity implements View.OnCli
     }
 
     @Override
+    public String getBannerAdUnitId() {
+        return null;
+    }
+
+    @Override
     protected long getInterstitialAdMilisInterval() {
         return 0l;
     }
