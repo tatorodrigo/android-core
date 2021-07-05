@@ -13,7 +13,7 @@ public class TranslateThisAppActivity extends BaseActivity implements View.OnCli
     private Button mButtonTranslateApp;
 
     @Override
-    public String getIntersticialAdUnitId() {
+    public String getInterstitialAdUnitId() {
         return null;
     }
 
@@ -23,7 +23,7 @@ public class TranslateThisAppActivity extends BaseActivity implements View.OnCli
     }
 
     @Override
-    protected long getInterstitialAdMilisInterval() {
+    protected long getInterstitialAdMillisInterval() {
         return 0l;
     }
 
