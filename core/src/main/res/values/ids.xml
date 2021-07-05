@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="toolbar" type="id" />
-    <item name="email_translate_this_app" type="string" />
+    <item name="email_translate_this_app" type="string" translatable="false" />
 </resources>
